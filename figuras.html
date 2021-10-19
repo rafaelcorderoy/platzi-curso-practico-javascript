@@ -8,27 +8,11 @@
 </head>
 <body>
     <header>
-        <h1>Figuras geométricas</h1>
-        <p>Este es el primer taller del curso práctico de JavaScript, figuras geométricas</p>
+        <h1>Triángulo isóseles</h1>
+        <p>Este es el primer desafio del curso práctico de JavaScript, tirángulo isóseles</p>
     </header>
     <section>
-        <h2>Calcula el área y el perímetro de un cuadrado</h2>
-        <form>
-            <label for="ladoCuadrado">
-                Escribe cuanto mide cada lado de tu cuadrado..
-            </label>
-            <input id="ladoCuadrado" type="number"/>
-            <p> </p>
-            <button type="button" onclick="calcularPerimetroCuadrado ()">
-                Calcular el perímetro
-            </button>
-            <button type="button" onclick="calcularAreaCuadrado ()">
-                Calcular el área
-            </button>
-        </form>
-    </section>
-    <section>
-        <h2>Calcula el área y el perímetro de un triangulo</h2>
+        <h2>Determina si con los datos ingresados se obtiene un triangulo isóseles, tambien obtiene la altura del triángulo</h2>
         <h3>Escriba los siguientes datos sobre el triangulo </h3>
         <form>
             <label for="ladoTriangulo1">
@@ -46,33 +30,11 @@
             </label>
             <input id="ladoTriangulo3" type="number"/>
             <p> </p>
-            <label for="alturaTriangulo">
-                Altura:
-            </label>
-            <input id="alturaTriangulo" type="number"/>
-            <p> </p>
-            <button type="button" onclick="calcularPerimetroTriangulo ()">
-                Calcular el perímetro
+            <button type="button" onclick="esIsoseles ()">
+                Es triángulo isóseles?
             </button>
-            <button type="button" onclick="calcularAreaTriangulo ()">
-                Calcular el área
-            </button>
-        </form>
-    </section>
-    <section>
-        <h2>Calcula el área y el perímetro de un círculo</h2>
-        <h3>Escriba el siguiente dato sobre el círculo </h3>
-        <form>
-            <label for="radio">
-                Radio:
-            </label>
-            <input id="radio" type="number"/>
-            <p> </p>
-            <button type="button" onclick="calcularPerimetroCirculo ()">
-                Calcular el perímetro
-            </button>
-            <button type="button" onclick="calcularAreaCirculo ()">
-                Calcular el área
+            <button type="button" onclick="calcularAlturaTriangulo ()">
+                Calcular la altura
             </button>
         </form>
     </section>

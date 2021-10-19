@@ -1,63 +1,39 @@
-// Código del cuadrado
-const ladoCuadrado = 5;
-
-function perimetroCuadrado (lado) {
-    return lado * 4;
-}
-
-function areaCuadrado (lado) {
-    return lado * lado
-}
 
 // Código del triángulo
 
-const ladoTriangulo1 = 6;
-const ladoTriangulo2 = 6;
-const baseTriangulo = 4;
-const alturaTriangulo = 5.5;
-function perimetroTriangulo (lado1, lado2, base) {
-    return lado1 + lado2 + base;
+function determinarTipoTriangulo (lado1, lado2, base) {
+    let tipo = "No definido";
+    if (lado1 == lado2) {
+        if (lado1 == base) {
+            tipo = "Equilátero"
+        } else {
+            tipo = "Isóseles"
+        }
+    } else if (lado1 == base) {
+        tipo = "Isóseles"
+    } else if (lado2 == base) {
+        tipo = "Isóseles"
+    } else {
+        tipo = "Escaleno"
+    }
+    return tipo;
 }
 
-function areaTriangulo (base, altura) {
-    return base * altura / 2;
-}
-
-// Código del círculo
-
-const radioCirculo = 4;
-const PI = Math.PI;
-
-function perimetroCirculo (radio) {
-    return 2 * PI * radio;
-}
-
-function areaCirculo (radio) {
-    return radio * radio * PI;
+function alturaTriangulo (l1, l2, b) {
+    let lado1 = l1;
+    let lado2 = l2;
+    let base = b;
+    console.log(lado1, lado2, base);
+    console.log(base/2*base/2);
+    console.log(lado1*lado1);
+    return Math.sqrt((lado1 * lado1) - ((base / 2) * (base / 2)));
 }
 
 // Interacción con el HTML
 
-// Cuadrado
-
-function calcularPerimetroCuadrado () {
-    const ladoEntrada = document.getElementById("ladoCuadrado");
-    const valorEntrada = ladoEntrada.value; 
-
-    const perimetro = perimetroCuadrado(valorEntrada);
-    alert("El perimetro del cuadrado es " + perimetro + " centimetros");
-}
-function calcularAreaCuadrado () {
-    const ladoEntrada = document.getElementById("ladoCuadrado");
-    const valorEntrada = ladoEntrada.value; 
-
-    const area = areaCuadrado(valorEntrada);
-    alert("El area del cuadrado es " + area + " centimetros cuadrados");
-}
-
 // Triangulo
 
-function calcularPerimetroTriangulo () {
+function esIsoseles () {
     const ladoEntrada1 = document.getElementById("ladoTriangulo1");
     const valorEntrada1 = parseInt(ladoEntrada1.value); 
 
@@ -67,33 +43,30 @@ function calcularPerimetroTriangulo () {
     const ladoEntrada3 = document.getElementById("ladoTriangulo3");
     const valorEntrada3 = parseInt(ladoEntrada3.value); 
 
-    const perimetro = perimetroTriangulo(valorEntrada1, valorEntrada2, valorEntrada3);
-    alert("El perimetro del triangulo es " + perimetro + " centimetros");
+    if (ladoEntrada1 + ladoEntrada2 > ladoEntrada3) {
+        alert("La base no puede ser mas pequeña que la suma de sus lados");
+    }
+
+    const tipo = determinarTipoTriangulo(valorEntrada1, valorEntrada2, valorEntrada3);
+    alert("El tipo de triangulo es " + tipo);
 }
-function calcularAreaTriangulo () {
-    const base = document.getElementById("ladoTriangulo3");
-    const valorBase = parseInt(base.value); 
+function calcularAlturaTriangulo () {
+    const ladoEntrada1 = document.getElementById("ladoTriangulo1");
+    const valorEntrada1 = parseFloat(ladoEntrada1.value); 
 
-    const altura = document.getElementById("alturaTriangulo");
-    const valoraltura = parseFloat(altura.value); 
+    const ladoEntrada2 = document.getElementById("ladoTriangulo2");
+    const valorEntrada2 = parseFloat(ladoEntrada2.value); 
 
-    const area = areaTriangulo(valorBase, valoraltura);
-    alert("El area del triangulo es " + area + " centimetros cuadrados");
+    const ladoEntrada3 = document.getElementById("ladoTriangulo3");
+    const valorEntrada3 = parseFloat(ladoEntrada3.value); 
+
+    if ((valorEntrada1 + valorEntrada2) < valorEntrada3) {
+        alert ("La base no puede ser mas grande que la suma de sus lados, no se puede calcular la altura");
+    } else {
+        const altura = alturaTriangulo(valorEntrada1, valorEntrada2, valorEntrada3);
+        console.log("Pase por aqui", valorEntrada1, valorEntrada2, valorEntrada3);
+        alert("La altura del triangulo es " + altura  + " centimetros cuadrados");    
+    }
+
 }
 
-// circulo
-
-function calcularPerimetroCirculo () {
-    const radio = document.getElementById("radio");
-    const valorRadio = radio.value; 
-
-    const perimetro = perimetroCirculo(valorRadio);
-    alert("El perimetro del circulo es " + perimetro + " centimetros");
-}
-function calcularAreaCirculo () {
-    const radio = document.getElementById("radio");
-    const valorRadio = radio.value; 
-
-    const area = areaCirculo(valorRadio);
-    alert("El area del circulo es " + area + " centimetros cuadrados");
-}
