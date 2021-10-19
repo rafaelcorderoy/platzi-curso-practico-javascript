@@ -7,21 +7,19 @@ console.log(
     " centímetros"
 );
 
-function perimetroCuadrado (lado) {
-    return lado * 4;
-}
+const perimetroCuadrado = ladoCuadrado * 4;
+
 console.log(
     "El perímetro del cuadrado mide " 
-    + perimetroCuadrado(ladoCuadrado) + 
+    + perimetroCuadrado + 
     " centimetros"
 );
 
-function areaCuadrado (lado) {
-    return lado * lado
-}
+const areaCuadrado = ladoCuadrado * ladoCuadrado;
+
 console.log(
     "El área del cuadrado mide " 
-    + areaCuadrado (ladoCuadrado) + 
+    + areaCuadrado + 
     " centimetros cuadrados"
 );
 console.groupEnd();
@@ -32,13 +30,8 @@ const ladoTriangulo1 = 6;
 const ladoTriangulo2 = 6;
 const baseTriangulo = 4;
 const alturaTriangulo = 5.5;
-function perimetroTriangulo (lado1, lado2, base) {
-    return lado1 + lado2 + base;
-}
-
-function areaTriangulo (base, altura) {
-    return base * altura / 2;
-}
+const perimetroTriangulo = ladoTriangulo1 + ladoTriangulo2 + baseTriangulo;
+const areaTriangulo = baseTriangulo * alturaTriangulo / 2;
 
 console.group("Triangulos");
 console.log(
@@ -52,7 +45,7 @@ console.log(
 );
 console.log(
     "El perimetro del triángulo mide " 
-    + perimetroTriangulo(ladoTriangulo1, ladoTriangulo2, baseTriangulo)
+    + perimetroTriangulo 
     + " centímetros"
 );
 console.log(
@@ -63,7 +56,7 @@ console.log(
 
 console.log(
     "El área del triangulo mide " 
-    + areaTriangulo (baseTriangulo, alturaTriangulo)
+    + areaTriangulo 
     + " centimetros cuadrados"
 );
 console.groupEnd();
@@ -71,15 +64,13 @@ console.groupEnd();
 // Código del círculo
 
 const radioCirculo = 4;
+const diametroCirculo = radioCirculo * 2;
+const pi = 3.14159;
 const PI = Math.PI;
-
-function perimetroCirculo (radio) {
-    return 2 * PI * radio;
-}
-
-function areaCirculo (radio) {
-    return radio * radio * PI;
-}
+const perimetroCirculo = 2 * pi * radioCirculo;
+const perimetroCirculoPi = 2 * PI * radioCirculo;
+const areaCirculo = radioCirculo * radioCirculo * pi;
+const areaCirculoPi = radioCirculo * radioCirculo * PI;
 
 console.group("Círculos");
 console.log(
@@ -92,16 +83,32 @@ console.log(
     + radioCirculo 
     + " cms"
 );
+console.log(
+    "El diámetro del círculo mide " 
+    + diametroCirculo 
+    + " cms"
+);
+
 
 console.log(
     "El perimetro del círculo mide " 
-    + perimetroCirculo (radioCirculo)
+    + perimetroCirculo 
+    + " centímetros"
+);
+console.log(
+    "El perimetro del círculo con Math.PI mide " 
+    + perimetroCirculoPi
     + " centímetros"
 );
 
 console.log(
     "El área del círculo mide " 
-    + areaCirculo (radioCirculo) 
+    + areaCirculo 
+    + " centimetros cuadrados"
+);
+console.log(
+    "El área del círculo con Math.PI mide " 
+    + areaCirculoPi 
     + " centimetros cuadrados"
 );
 
