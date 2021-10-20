@@ -7,3 +7,10 @@ platzi-curso-practico-javascript
 - Paso 2: Implementar las fórmulas en JavaScript
 - Paso 3: Crear funciones con el código de las fórmulas
 - Paso 4: Integrar JavaScript con HTML
+
+## Taller No. 2: Cálculo de porcentajes y descuentos
+
+- Paso 1: Definir las fórmulas
+- Paso 2: Implementar las fórmulas en JavaScript
+- Paso 3: Crear funciones con el código de las fórmulas
+- Paso 4: Integrar JavaScript con HTML
