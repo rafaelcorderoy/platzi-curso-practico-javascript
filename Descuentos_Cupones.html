@@ -17,14 +17,61 @@
             <label for="InputPrice">Escribe el precio original de tu producto</label>
             <input id="InputPrice" type="number">
             <p></p>
-            <label for="InputDiscount">Escribe el descuento original de tu producto</label>
-            <input id="InputDiscount" type="number">
-            <p></p>
+            <div>¿Quieres usar un cupon de descuentos?</div>
+            <div class="selec-opcion-cupones" id="Si-No">
+                <input type="radio" name="radios" id="radio-1"/>
+                <label for="radio-1"> Si </label>
+                <input type="radio" name="radios" id="radio-2"/>
+                <label for="radio-2"> No </label>
+                <p></p>
+            </div>
+            <div class="opciones-cupones" id="sel-cupon">
+                <select class="cupones" id="sel-cupon" style="display: flex">
+                  <option selected>Elige el cupon a utilizar</option>
+                  <option id="cupon1">1 - Estudiante - 15%</option>
+                  <option id="cupon2">2 - Cliente frecuente - 20%</option>
+                  <option id="cupon3">3 - Cliente VIP - 30%</option>
+                </select>
+                <p></p>
+            </div>
             <button type="button" onclick="onClickCalculaPrecioRebajado()">Calcular el precio con descuento</button>
             <p id="resultPrice"></p>
         </form>
     </section>
+    <script>
+        $(document).ready(function(){
+        $('.sel-cupon').css("display","none");
+          
+        $('#radio-1').click(function(){
+            if($(this).prop("checked") == true){
+                $('.sel-cupon').css('display','flex');
+            }
+        });
+      
+        $('#radio-2').click(function(){
+            if($(this).prop("checked") == true){
+                $('.sel-cupon').css('display','none');
+            }
+        });
+      });
 
-    <script src="./descuentos_Cupones.js"></script>
+/*        let opciones = document.getElementById("sel-cupon");
+        const si = document.getElementById("radio-1");
+        const no = document.getElementById("radio-2");
+        console.log(opciones.style.display);
+//        opciones.style.display="none";
+        console.log("Si " + si.checked);
+        console.log("No " + no.checked);
+        evento = addEventListener("onchange", evaluar);
+        function evaluar (evento) {
+            if (si.checked) {
+                console.log(si.checked, no.checked);
+                opciones.style.display="inline-block";
+            } else if (no.checked) {
+                console.log(si.checked, no.checked);
+                opciones.style.display="none";        
+            }  
+        }*/
+    </script>
 </body>
 </html>
