@@ -3,10 +3,11 @@ let  lista1 = [
     200,
     800,
     500,
+    400000000,     
     900,
+    300,
     100,
     50,
-    400000000,     
 ];
 
 const mitadLista1 = Math.ceil(lista1.length / 2);
@@ -52,20 +53,36 @@ function calcularMediana(lista) {
 function ordenarLista(lista) {
     let aux = 0;
     listaInterna = lista;
-    for (let i=0; i<listaInterna.length-2;i++){
-        for (let j=i+1; j<listaInterna.length-1; j++){
+    let i = 0;
+    let j = i + 1;
+    let cambios = 1;
+    let ordenado = false;
+    let salir = false;
+    while (!salir) {
+        if (listaInterna[i] > listaInterna[j]) {
+            aux = listaInterna[i];
+            listaInterna[i] = listaInterna[j];
+            listaInterna[j] = aux;
+            ordenado = false;
 /*            console.log("Lista-i " + listaInterna[i] + " lista-j " + listaInterna[j]);
             console.log("i " + i + " j " + j);
             console.log("Antes de cambiar " + listaInterna);*/
-            if (listaInterna[i] > listaInterna[j]) {
-//                console.log("Es mayor");
-                aux = listaInterna[i];
-                listaInterna[i] = listaInterna[j];
-                listaInterna[j] = aux;
+            console.log("Cambio " + cambios + " " + listaInterna);
+            cambios++;
+        }
+//        else {console.log("sin cambio");}
+        if (j === listaInterna.length) {
+            i++;
+            j = i + 1;
+            if (ordenado) {
+                salir = true;
             }
+            ordenado = true;
+        } else {
+            j++;
         }
     }
-//    console.log("Despues de cambiar " + listaInterna);
+    console.log("Cambios " + cambios);
     return listaInterna;
 }
 
