@@ -5,18 +5,27 @@ const lista1 = [
     500,     
 ];
 
-let sumaLista1 = 0;
-console.log("La suma es " + sumaLista1);
 
-for (let i = 0; i < lista1.length; i++) {
-    sumaLista1 = sumaLista1 + lista1[i];
-    console.log("La suma es " + sumaLista1);
-    console.log(lista1[i]);
+function calcularMediaAritmetica(lista) {
+    let sumaLista = 0;
+    console.log("La lista compelta es " + lista);
+    console.log(lista.length);
+    console.log("La suma es " + sumaLista);
+
+
+    for (let i = 0; i < lista.length; i++) {
+        sumaLista = sumaLista + lista[i];
+        console.log("El valor a ser sumado es " + lista[i]);
+        console.log("La suma es " + sumaLista);
+    }
+    console.log("el total es " + sumaLista);
+    console.log("La longitud de la lista es " + lista.length);
+
+    
+    let promedioLista = sumaLista / lista.length;
+
+    console.log("El promedio es " + promedioLista);
+
+    return promedioLista;
+
 }
-console.log("el total es " + sumaLista1);
-
-console.log(lista1.length);
-
-let promedioLista1 = sumaLista1 / lista1.length;
-
-console.log("El promedio es " + promedioLista1);
