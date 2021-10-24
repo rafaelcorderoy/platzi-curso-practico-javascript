@@ -31,25 +31,27 @@ let  lista1 = [
     7,
     8,
     6];
+let moda;
 
-const contadorElementos = {};
+function calcularModa(lista) {
+    const contadorElementos = {};
 
-lista1.map(
-    function(elemento) {
-        if (contadorElementos[elemento]) {
-            contadorElementos[elemento] ++;
-        } else {
-            contadorElementos[elemento] = 1;
+    lista.map(
+        function(elemento) {
+            if (contadorElementos[elemento]) {
+                contadorElementos[elemento] ++;
+            } else {
+                contadorElementos[elemento] = 1;
+            }
+    
         }
-
-    }
-);
-
-const lista1Array = Object.entries(contadorElementos).sort (
-    function (valorAnterior, valorNuevo) {
-        return valorAnterior[1] - valorNuevo[1];
-    }
-);
-
-const moda = lista1Array[lista1Array.length - 1];
+    );
+    
+    const lista1Array = Object.entries(contadorElementos).sort (
+        function (valorAnterior, valorNuevo) {
+            return valorAnterior[1] - valorNuevo[1];
+        }
+    );
+    moda = lista1Array[lista1Array.length - 1]; 
+}
 
